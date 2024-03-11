@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: new-laravel-app
+    container_name: new-laravel-app-container
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www
